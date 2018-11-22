@@ -8,3 +8,10 @@ services:
      - ./app:/app
   redis:
     image: "redis:alpine"
+  jupyter:
+    build: ./jupyter
+    volumes:
+      -  ./jupyter:/app
+    ports:
+     - "8000:8888"
+    entrypoint: jupyter lab --ip=0.0.0.0 --no-browser --notebook-dir=/app

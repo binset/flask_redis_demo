@@ -1,0 +1,18 @@
+jupyter
+jupyterlab
+
+# python
+requests
+sqlalchemy
+tqdm
+
+# test
+nose
+
+
+# data science
+pandas
+numpy
+matplotlib
+bokeh
+plotly
