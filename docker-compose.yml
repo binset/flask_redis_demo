@@ -8,6 +8,20 @@ services:
      - ./app:/app
   redis:
     image: "redis:alpine"
+  db:
+    build: ./db
+    command: mysqld --user=root --verbose
+    volumes:
+      - ./db:/app
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    # container_name: database.dev
+    ports:
+    - "13306:3306"
   jupyter:
     build: ./jupyter
     volumes:
