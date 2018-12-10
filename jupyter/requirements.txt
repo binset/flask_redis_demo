@@ -5,6 +5,7 @@ jupyterlab
 requests
 sqlalchemy
 tqdm
+pymysql
 
 # test
 nose
